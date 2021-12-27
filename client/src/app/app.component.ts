@@ -17,11 +17,14 @@ export class AppComponent {
   constructor( private statusService: StatusService){}
   hasSttusesChanges( ){
       this.transComponent.initStatuses();
-  
   }
+  
+  hasSttusesChanges1( ){
+    this.transComponent.initTransitions()
+  }
+  
   hasTransitionsChanges( ){
     this.addSatusComponent.getStatuses();
-   
   }
   reset(){
     this.statusService.reset().pipe(
