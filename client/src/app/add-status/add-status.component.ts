@@ -18,6 +18,8 @@ export class AddStatusComponent implements OnInit {
   formGroup!: FormGroup;
   statusName!:status;
   @Output() hasChange :EventEmitter<any>   = new EventEmitter<any> ();
+  @Output() hasChange1 :EventEmitter<any>   = new EventEmitter<any> ();
+
 
   constructor(private formBuilder: FormBuilder,
     private statusService: StatusService
@@ -49,7 +51,8 @@ export class AddStatusComponent implements OnInit {
   delete(name: any) {
     //this.statusName={name1:name}
     this.statusService.deleteStatusByName(name).pipe(
-      tap(_=>this.getStatuses())
+      tap(_=>this.getStatuses()),
+      tap(_=>this.hasChange1.emit(null ))
     ).subscribe();
   }
 
