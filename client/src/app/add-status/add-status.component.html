@@ -1,0 +1,27 @@
+<span class="title">Add status</span> 
+<br><br>
+
+
+
+<form [formGroup]="formGroup">
+   
+    
+    
+    <input type="text" formControlName="name" />
+     
+    
+    <button type="submit" (click)="add()">add</button>
+</form>
+<!-- <div (click)="add()">add</div> -->
+
+    <ul *ngFor="let s of arr">
+        <li>
+                <input type="radio" [checked]="s.init" (click)="setInput(s.name)">
+                <span *ngIf="s.name" [innerText]="s.name"></span>
+                <button  (click)="delete(s.name)">remove</button>
+                <span *ngIf="s.init" [innerText]="'[init]  '"></span>
+                <span *ngIf="s.final" [innerText]="'[final]  '"></span>
+                <span *ngIf="s.orphan" [innerText]="'[orphan]'"></span>
+                <br/>
+        </li>
+    </ul>

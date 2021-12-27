@@ -1,0 +1,14 @@
+ 
+<div class="main">
+    <section>
+        <app-add-status (hasChange)="hasSttusesChanges()"></app-add-status>
+
+    </section>
+
+    <section>
+        <app-transitions (hasChange)="hasTransitionsChanges()"></app-transitions>
+    </section>
+</div>
+<div class="reset" (click)="reset()">
+    <span [innerText]="'RESET'"></span>
+</div>

@@ -1,0 +1,32 @@
+:host{
+    margin-top: 100px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    .main{
+        display: flex;
+        flex-direction: row;
+        section{
+           // width:50%;
+            
+            margin: 30px;
+           // border:solid 5px red;
+        
+        }
+    }
+     .reset{
+        display: flex;
+        font-size: 30px;
+        margin-top: 30px;
+        background-color: red;
+        border:solid 2px black;
+        border-radius: 50%;
+        width:150px;
+        height:150px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

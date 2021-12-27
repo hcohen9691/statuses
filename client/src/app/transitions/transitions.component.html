@@ -1,0 +1,40 @@
+<span class="title" [innerText]="'AddTransition'"></span><br><br>
+
+<form [formGroup]="formGroup">
+    <span class="size" [innerText]="'Name:'"></span>
+    <input #a type="text" formControlName="name">
+    <span class="size" [innerText]="'From:'"></span>
+    <select #from (change)="updateFrom(from.value)">
+        <option *ngFor="let status of statuses">
+            <span [innerText]="status"></span>
+        </option>
+    </select>
+    
+    <span class="size" [innerText]="'To:'"></span>
+    <select #to (change)="updateTo(to.value)">
+        <option *ngFor="let status of statuesWithoutFrom">
+            <span [innerText]="status"></span>
+        </option>
+    </select>
+
+    
+   <span > <button #flag *ngIf="from.value&&to.value&&a"   (click)="add()" [innerText]="'add'" ></button></span>
+</form>
+
+
+
+
+
+<ul *ngFor="let t of arr">
+    <li>
+            <span  [innerText]="t.name"></span>
+            <span  [innerText]="':'"></span>
+            <span  [innerText]="t.fromStatus"></span>
+            <span  [innerText]="'->'"></span>
+            <span  [innerText]="t.toStatus"></span>
+            <button  (click)="delete(t.name,t.fromStatus,t.toStatus)">remove</button>
+           
+            
+            <br/>
+    </li>
+</ul>
